@@ -10,6 +10,7 @@ Pizza.prototype.modifyPrice = function(){
   }else{
     this.price += 10
   }
+  
 }
 
-let pizzaOne = new Pizza(["anchovies", "pineapple"], "medium", 0);
+let pizzaOne = new Pizza(["anchovies", "pineapple"], "large", 0);
