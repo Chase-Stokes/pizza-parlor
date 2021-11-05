@@ -54,14 +54,17 @@ Describe: modifyPrice()
 Test: "It should modify the price value +8 for a medium size"
 Code: pizzaOne.modifyPrice(); pizzaOne
 Expected Output: pizzaOne {toppings: ["anchovies", "pineapple"], size: "medium", price: 8}
+~completed
 
 Test: "It should modify the price value +10 for a large size"
 Code: pizzaOne.modifyPrice(); pizzaOne
 Expected Output: pizzaOne {toppings: ["anchovies", "pineapple"], size: "large", price: 10}
+~completed
 
 Test: "It should modify the price value +1 for one topping topping"
 Code: pizzaOne.modifyPrice(); pizzaOne
 Expected Output: pizzaOne {toppings: "pepperoni", size: "large", price: 11}
+~completed
 
 Test: "It should modify the price value +1 for each topping, allowing for multiple toppings"
 Code: pizzaOne.modifyPrice(); pizzaOne
