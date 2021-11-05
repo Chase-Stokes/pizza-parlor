@@ -27,6 +27,11 @@ Pizza.prototype.modifyPrice = function(){
     }else {
       this.price;
     }
+    if (this.topping1 === "mushroom"){
+      this.price += 1;
+    }else {
+      this.price;
+    }
     if (this.topping1 === "squid"){
       this.price += 2;
     }else {
@@ -52,6 +57,11 @@ Pizza.prototype.modifyPrice = function(){
     }else {
       this.price;
     }
+    if (this.topping2 === "mushroom"){
+      this.price += 1;
+    }else {
+      this.price;
+    }
     if (this.topping3 === "anchovies"){
       this.price += 1;
     }else{
@@ -69,6 +79,11 @@ Pizza.prototype.modifyPrice = function(){
     }
     if (this.topping3 === "squid"){
       this.price += 2;
+    }else {
+      this.price;
+    }
+    if (this.topping3 === "mushroom"){
+      this.price += 1;
     }else {
       this.price;
     }
