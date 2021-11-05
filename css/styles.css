@@ -13,3 +13,6 @@ body{
 label {
   font-style:italic;
 }
+#summary {
+  display:none;
+}

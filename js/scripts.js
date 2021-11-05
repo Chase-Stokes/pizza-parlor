@@ -96,24 +96,30 @@ Pizza.prototype.modifyPrice = function(){
 
 function showSelections(orderPizza) {
   $("#summary").show();
-  
+  $(".1").html(orderPizza.price);
+  $(".2").html(orderPizza.size);
+  $(".3").html(orderPizza.topping1);
+  $(".4").html(orderPizza.topping2);
+  $(".5").html(orderPizza.topping3);
 }
 
-// let pizzaOne = new Pizza(0, "medium", "anchovies");
+//let pizzaOne = new Pizza(0, "medium", "anchovies");
 // let pizzaTwo = new Pizza(0, "large", "pineapple", "anchovies");
 $(document).ready(function(){
-  $("#pizza").submit(function(event){
+  $("#pizzaOptions").submit(function(event){
     event.preventDefault();
-     let pizzaSize = $("input:radio[name=size]:checked").val();
-     let tOne = $("input:radio[name=toppingOne]:checked").val();
-     let tTwo= $("input:radio[name=toppingTwo]:checked").val();
-     let tThree = $("input:radio[name=toppingThree]:checked").val();
-    $("input:radio[name=size]:checked").val()
+    let pizzaSize = $("input:radio[name=size]:checked").val();
+    let tOne = $("input:radio[name=toppingOne]:checked").val();
+    let tTwo= $("input:radio[name=toppingTwo]:checked").val();
+    let tThree = $("input:radio[name=toppingThree]:checked").val();
+    $("input:radio[name=size]:checked").val("")
     $("input:radio[name=toppingOne]:checked").val();
     $("input:radio[name=toppingTwo]:checked").val();
     $("input:radio[name=toppingThree]:checked").val();
     let orderPizza = new Pizza(0, pizzaSize, tOne, tTwo, tThree)
     orderPizza.modifyPrice();
-    console.log(orderPizza.price)
-  })
+    showSelections(orderPizza);
+   // $("#hidePizza").hide();
+    //console.log(orderPizza.price)
+  });
 })
