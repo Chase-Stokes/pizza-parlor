@@ -46,7 +46,8 @@ Describe: Pizza()
 
 Test: "It should return a Pizza object with three properties for toppings and size and price"
 Code: const pizzaOne(["anchovies", "pineapple"], "medium", 0);
-Expected Output: pizzaOne {toppings: ["anchovies", "pineapple"], size: "medium", price: 0}
+Expected Output: pizzaOne {toppings: ["anchovies", "pineapple"], size: "medium", price: 0} 
+~completed
 
 Describe: modifyPrice()
 
