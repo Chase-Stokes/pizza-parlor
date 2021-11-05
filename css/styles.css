@@ -1,0 +1,15 @@
+.jumbotron {
+  text-align:center;
+  margin-left: 25%;
+  margin-right:25%;
+  background-color: transparent;
+}
+#jumImg {
+  border: solid 2px black;
+}
+body{
+  background-image: url("../img/pizzagif1.gif");
+}
+label {
+  font-style:italic;
+}

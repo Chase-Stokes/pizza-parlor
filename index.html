@@ -4,12 +4,97 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/scripts.js"></script>
   <title>Document</title>
 </head>
 <body>
-  <div id="containter">
-    
-  </div>
-  
+  <div class="container">
+    <div class="jumbotron">
+      <img src="img/pizzagif2.gif" alt="tasty pizza" id="jumImg">
+      <h1>Densetsu no Pizza</h1>
+    </div>
+    <form id="pizza">
+      <div class ="form-group">
+        <h3>Size Options:</h3>
+        <div class="radio">
+          <label><input type="radio" name="size" value="medium">Medium</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="size" value="large">Large</label>
+        </div>
+        <div class ="form-group">
+          <h3>First Topping:</h3>
+          <div class="radio">
+            <label><input type="radio" name="toppingOne" value="anchovies">Anchovies</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="toppingOne" value="pineapple">Pineapple</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="toppingOne" value="shrimp">Shrimp</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="toppingOne" value="mushroom">Mushrooms</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="toppingOne" value="squid">Calamari</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="toppingOne" value="penne">Penne</label>
+          </div>
+          <div class ="form-group">
+            <h3>Second Topping:</h3>
+            <div class="radio">
+              <label><input type="radio" name="toppingTwo" value="anchovies">Anchovies</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="toppingTwo" value="pineapple">Pineapple</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="toppingTwo" value="shrimp">Shrimp</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="toppingTwo" value="mushroom">Mushrooms</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="toppingTwo" value="squid">Calamari</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="toppingTwo" value="penne">Penne</label>
+            </div>
+            <div class ="form-group">
+              <h3>Third Topping:</h3>
+              <div class="radio">
+                <label><input type="radio" name="toppingThree" value="anchovies">Anchovies</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="toppingThree" value="pineapple">Pineapple</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="toppingThree" value="shrimp">Shrimp</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="toppingThree" value="mushroom">Mushrooms</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="toppingThree" value="squid">Calamari</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="toppingThree" value="penne">Penne</label>
+              </div>
+              <button type="submit" class="btn btn-dark">Build It!</button>       
+      </div>
+    </form>
+    <div id="summary">
+      <p><strong>Total Price:</strong> <span class="1"></span></p>
+      <p><strong>Selected Time:</strong> <span class="2"></span></p>
+      <p><strong>Ticket Type: </strong> <span class="3"></span></p>
+      <p><strong>Ticket Cost: </strong> <span class="4"></span></p>
+    </div>
+
+  </div>  
 </body>
 </html>

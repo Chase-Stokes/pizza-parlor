@@ -37,6 +37,11 @@ Pizza.prototype.modifyPrice = function(){
     }else {
       this.price;
     }
+    if (this.topping1 === "Penne"){
+      this.price += 1;
+    }else {
+      this.price;
+    }
     if (this.topping2 === "anchovies"){
       this.price += 1;
     }else{
@@ -89,5 +94,26 @@ Pizza.prototype.modifyPrice = function(){
     }
 }
 
-let pizzaOne = new Pizza(0, "medium", "anchovies");
-let pizzaTwo = new Pizza(0, "large", "pineapple", "anchovies");
+function showSelections(orderPizza) {
+  $("#summary").show();
+  
+}
+
+// let pizzaOne = new Pizza(0, "medium", "anchovies");
+// let pizzaTwo = new Pizza(0, "large", "pineapple", "anchovies");
+$(document).ready(function(){
+  $("#pizza").submit(function(event){
+    event.preventDefault();
+     let pizzaSize = $("input:radio[name=size]:checked").val();
+     let tOne = $("input:radio[name=toppingOne]:checked").val();
+     let tTwo= $("input:radio[name=toppingTwo]:checked").val();
+     let tThree = $("input:radio[name=toppingThree]:checked").val();
+    $("input:radio[name=size]:checked").val()
+    $("input:radio[name=toppingOne]:checked").val();
+    $("input:radio[name=toppingTwo]:checked").val();
+    $("input:radio[name=toppingThree]:checked").val();
+    let orderPizza = new Pizza(0, pizzaSize, tOne, tTwo, tThree)
+    orderPizza.modifyPrice();
+    console.log(orderPizza.price)
+  })
+})
