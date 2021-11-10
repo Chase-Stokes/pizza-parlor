@@ -28,9 +28,8 @@ $(document).ready(function(){
     let tOne = $("input:checkbox[name=topping]:checked").each(function(){
       toppingsArray.push($(this).val())
     });
-    console.log(toppingsArray)
     let orderPizza = new Pizza(0, pizzaSize, toppingsArray);
     orderPizza.modifyPrice();
     showSelections(orderPizza);
   });
-})
+});
