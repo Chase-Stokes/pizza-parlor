@@ -1,125 +1,36 @@
-function Pizza(price, size, topping1, topping2, topping3) {
+function Pizza(price, size, topping) {
   this.price = 0
   this.size = size
-  this.topping1 = topping1
-  this.topping2 = topping2
-  this.topping3 = topping3
+  this.topping = topping
 }
 
 Pizza.prototype.modifyPrice = function(){
+  
   if (this.size === "medium"){
-    this.price += 8;
+    this.price+=(8 + this.topping.length *2);
   }else{
-    this.price += 10;
+    this.price+=(10 + this.topping.length *2);
   }
-    if (this.topping1 === "anchovies"){
-      this.price += 1;
-    }else{
-      this.price;
-    }
-    if (this.topping1 === "pineapple"){
-      this.price += 1;
-    }else {
-      this.price;
-    }
-    if (this.topping1 === "shrimp"){
-      this.price += 3;
-    }else {
-      this.price;
-    }
-    if (this.topping1 === "mushroom"){
-      this.price += 1;
-    }else {
-      this.price;
-    }
-    if (this.topping1 === "squid"){
-      this.price += 2;
-    }else {
-      this.price;
-    }
-    if (this.topping1 === "Penne"){
-      this.price += 1;
-    }else {
-      this.price;
-    }
-    if (this.topping2 === "anchovies"){
-      this.price += 1;
-    }else{
-      this.price;
-    }
-    if (this.topping2 === "pineapple"){
-      this.price += 1;
-    }else {
-      this.price;
-    }
-    if (this.topping2 === "shrimp"){
-      this.price += 3;
-    }else {
-      this.price;
-    }
-    if (this.topping2 === "squid"){
-      this.price += 2;
-    }else {
-      this.price;
-    }
-    if (this.topping2 === "mushroom"){
-      this.price += 1;
-    }else {
-      this.price;
-    }
-    if (this.topping3 === "anchovies"){
-      this.price += 1;
-    }else{
-      this.price;
-    }
-    if (this.topping3 === "pineapple"){
-      this.price += 1;
-    }else {
-      this.price;
-    }
-    if (this.topping3 === "shrimp"){
-      this.price += 3;
-    }else {
-      this.price;
-    }
-    if (this.topping3 === "squid"){
-      this.price += 2;
-    }else {
-      this.price;
-    }
-    if (this.topping3 === "mushroom"){
-      this.price += 1;
-    }else {
-      this.price;
-    }
 }
 
 function showSelections(orderPizza) {
   $("#summary").show();
   $(".1").html(orderPizza.price);
   $(".2").html(orderPizza.size);
-  $(".3").html(orderPizza.topping1);
-  $(".4").html(orderPizza.topping2);
-  $(".5").html(orderPizza.topping3);
+  $(".3").html(orderPizza.topping.join(", "));
 }
 
-//let pizzaOne = new Pizza(0, "medium", "anchovies");
-// let pizzaTwo = new Pizza(0, "large", "pineapple", "anchovies");
 $(document).ready(function(){
   $("#pizzaOptions").submit(function(event){
     event.preventDefault();
     let pizzaSize = $("input:radio[name=size]:checked").val();
-    let tOne = $("input:radio[name=toppingOne]:checked").val();
-    let tTwo= $("input:radio[name=toppingTwo]:checked").val();
-    let tThree = $("input:radio[name=toppingThree]:checked").val();
-    $("input:radio[name=size]:checked").val("")
-    $("input:radio[name=toppingOne]:checked").val();
-    $("input:radio[name=toppingTwo]:checked").val();
-    $("input:radio[name=toppingThree]:checked").val();
-    let orderPizza = new Pizza(0, pizzaSize, tOne, tTwo, tThree)
+    let toppingsArray = [];
+    let tOne = $("input:checkbox[name=topping]:checked").each(function(){
+      toppingsArray.push($(this).val())
+    });
+    console.log(toppingsArray)
+    let orderPizza = new Pizza(0, pizzaSize, toppingsArray);
     orderPizza.modifyPrice();
     showSelections(orderPizza);
-   // $("#hidePizza").hide();
-    //console.log(orderPizza.price)
   });
 })
